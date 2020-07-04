@@ -37,7 +37,7 @@ void setup() {
   s6.write(90);
   s7.write(90);
   Serial.begin(9600);
-  analogWrite(9,50);  //////////////// ubah kecepatan 0 sampai 255 ////////////
+  //analogWrite(9,50);  //////////////// ubah kecepatan 0 sampai 255 ////////////
   // Serial.println("start");
 
 }
