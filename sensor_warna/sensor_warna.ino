@@ -10,7 +10,7 @@
 #define S3 7
 #define sensorOut 8
 
-// Stores frequency read by the photodiodes
+// Stores frequency read by the photodiodes 210 184 190kuning
 int redFrequency = 0;
 int greenFrequency = 0;
 int blueFrequency = 0;
@@ -26,7 +26,8 @@ void setup() {
   pinMode(S1, OUTPUT);
   pinMode(S2, OUTPUT);
   pinMode(S3, OUTPUT);
-  
+  pinMode(3, OUTPUT);
+   digitalWrite(3,0);
   // Setting the sensorOut as an input
   pinMode(sensorOut, INPUT);
   
@@ -89,13 +90,22 @@ void loop() {
 
   // Checks the current detected color and prints
   // a message in the serial monitor
-  if(redColor > greenColor && redColor > blueColor){
-      Serial.println(" - RED detected!");
+  if(redColor > 100 && redColor < 300 && blueColor<500){
+    Serial.println(" kuning");
+  }else if(redColor >200 && redColor < 500 && blueColor<500){
+    Serial.println(" kuning");
+  }else if(greenColor>50){
+    Serial.println(" hijau");
+  }else{
+    Serial.println(" gelap");
   }
-  if(greenColor > redColor && greenColor > blueColor){
-    Serial.println(" - GREEN detected!");
-  }
-  if(blueColor > redColor && blueColor > greenColor){
-    Serial.println(" - BLUE detected!");
-  }
+//  if(redColor > greenColor && redColor > blueColor){
+//      Serial.println(" - RED detected!");
+//  }
+//  if(greenColor > redColor && greenColor > blueColor){
+//    Serial.println(" - GREEN detected!");
+//  }
+//  if(blueColor > redColor && blueColor > greenColor){
+//    Serial.println(" - BLUE detected!");
+//  }
 }
