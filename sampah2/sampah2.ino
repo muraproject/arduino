@@ -215,7 +215,7 @@ void motor() {
 void counter1(int a) {
   //delay(1000);6
   counter=a;
-  s6.write(180);
+ // s6.write(180);
   digitalWrite(13, 1);
   fwd();
   while (counter > 0) {
