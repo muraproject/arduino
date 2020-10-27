@@ -22,49 +22,60 @@ void setup() {
 void loop() {
 
   if (rfid.isCard()) {
+    String kartu="";
+    char c;
     if (rfid.readCardSerial()) {
-      Serial.print(rfid.serNum[0]);
-      Serial.print(" ");
-      Serial.print(rfid.serNum[1]);
-      Serial.print(" ");
-      Serial.print(rfid.serNum[2]);
-      Serial.print(" ");
-      Serial.println(rfid.serNum[3]);
+//      Serial.print(rfid.serNum[0]);
+      kartu += rfid.serNum[0];
+      kartu += rfid.serNum[1];
+      kartu += rfid.serNum[2];
+      kartu += rfid.serNum[3];
+//      Serial.print(" ");
+//      Serial.print(rfid.serNum[1]);
+//      Serial.print(" ");
+//      Serial.print(rfid.serNum[2]);
+//      Serial.print(" ");
+//      Serial.println(rfid.serNum[3]);
+      Serial.println(kartu);
+      digitalWrite(3, 1);
+      delay(200);
+      digitalWrite(3, 0);
+      delay(2000);
     }
     rfid.halt();
-    if (rfid.serNum[0] == 214 && rfid.serNum[1] ==  169  && rfid.serNum[2] == 155 && rfid.serNum[3] == 3 ) {
-      if (state == 1) {
-        digitalWrite(4, 1);
-        digitalWrite(3, 1);
-        state = 0;
-        delay(1000);
-        digitalWrite(3, 0);
-        delay(9000);
-       
-      } else {
-        state = 1;
-        digitalWrite(3, 1);
-        delay(500);
-        digitalWrite(3, 0);
-        delay(500);
-        digitalWrite(4, 0);
-        delay(3000);
-        
-      }
-
-    } else {
-      digitalWrite(3, 1);
-      delay(500);
-      digitalWrite(3, 0);
-      delay(500);
-      digitalWrite(3, 1);
-      delay(500);
-      digitalWrite(3, 0);
-      delay(500);
-      digitalWrite(3, 1);
-      delay(500);
-      digitalWrite(3, 0);
-      delay(500);
-    }
+//    if (rfid.serNum[0] == 214 && rfid.serNum[1] ==  169  && rfid.serNum[2] == 155 && rfid.serNum[3] == 3 ) {
+//      if (state == 1) {
+//        digitalWrite(4, 1);
+//        digitalWrite(3, 1);
+//        state = 0;
+//        delay(1000);
+//        digitalWrite(3, 0);
+//        delay(9000);
+//       
+//      } else {
+//        state = 1;
+//        digitalWrite(3, 1);
+//        delay(500);
+//        digitalWrite(3, 0);
+//        delay(500);
+//        digitalWrite(4, 0);
+//        delay(3000);
+//        
+//      }
+//
+//    } else {
+//      digitalWrite(3, 1);
+//      delay(500);
+//      digitalWrite(3, 0);
+//      delay(500);
+//      digitalWrite(3, 1);
+//      delay(500);
+//      digitalWrite(3, 0);
+//      delay(500);
+//      digitalWrite(3, 1);
+//      delay(500);
+//      digitalWrite(3, 0);
+//      delay(500);
+//    }
   }
 }

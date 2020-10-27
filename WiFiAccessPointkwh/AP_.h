@@ -67,7 +67,8 @@ void ap_mode(){
             
             }
             client.println("");
-            client.print("</select><label for='lname'>Last Name</label> <input type='text' id='lname' name='password' placeholder='password'><input type='submit' value='Submit'></form></div></body></html>");
+            
+client.print("</select><label for='lname'>Last Name</label> <input type='text' id='lname' name='password' placeholder='password'><input type='submit' value='Submit'></form></div></body></html>");
           
           }
             
@@ -95,3 +96,5 @@ void ap_mode(){
 
   
 }
+
+ 
