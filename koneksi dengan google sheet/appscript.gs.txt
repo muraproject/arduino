@@ -1,0 +1,11 @@
+function doGet() {
+  // Mengambil data dari spreadsheet
+  var sheet = SpreadsheetApp.openById("1ImcpRpOdPHacxHGTP8z_l7cxUZC5mgPR1VRvz2cmM7k").getSheetByName("Sheet1");
+  var data = sheet.getRange("A2").getValue();
+  
+  // Membuat label HTML
+  var result =  data;
+  
+  // Mengembalikan hasil
+  return ContentService.createTextOutput(result).setMimeType(ContentService.MimeType.TEXT);
+}
