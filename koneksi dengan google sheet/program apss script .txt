@@ -1,0 +1,19 @@
+function doGet(e) {
+  // Mengambil parameter value dari URL jika ada
+  var value = e.parameter.value;
+
+  // Mengambil spreadsheet dan sheet
+  var sheet = SpreadsheetApp.openById("15QMJA3qfSlF7q814qmZCrcjNghtShAdMKoVyf8C9i0w").getSheetByName("Sheet1");
+
+  // Mengambil nilai saat ini di A2
+  var currentValue = sheet.getRange("A2").getValue();
+
+  // Jika ada value yang diberikan di URL, update nilai di A2
+  if (value) {
+    sheet.getRange("A2").setValue(value);
+    return ContentService.createTextOutput(value);
+  }
+
+  // Jika tidak ada value yang diberikan di URL, kembalikan nilai saat ini di A2
+  return ContentService.createTextOutput(currentValue);
+}
