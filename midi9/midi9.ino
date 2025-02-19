@@ -333,7 +333,7 @@ void midiPlayerTask(void * parameter) {
       delay(10);
     }
   }
-
+}
   
 
   void handleFileUpload() {
